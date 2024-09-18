@@ -25,12 +25,14 @@ type Transport interface {
 }
 
 type TransportOptions struct {
-	Context      context.Context
-	Logger       logger.ContextLogger
-	Name         string
-	Dialer       N.Dialer
-	Address      string
-	ClientSubnet netip.Prefix
+	Context       context.Context
+	Logger        logger.ContextLogger
+	Name          string
+	Dialer        N.Dialer
+	Address       string
+	ClientSubnet  netip.Prefix
+	Inet4Response netip.Addr
+	Inet6Response netip.Addr
 }
 
 var transports map[string]TransportConstructor
